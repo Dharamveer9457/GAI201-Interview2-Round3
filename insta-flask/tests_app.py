@@ -27,7 +27,7 @@ def test_view_posts(client):
 
 def test_delete_post(client):
     post_data = {'username': 'user1', 'caption': 'Test caption'}
-    response = client.post('/deletepost', data=json.dumps(post_data), content_type='application/json')
+    response = client.post('/createpost', data=json.dumps(post_data), content_type='application/json')
     post_id = json.loads(response.data)['post_id']
 
     response = client.delete(f'/deletepost/{post_id}')

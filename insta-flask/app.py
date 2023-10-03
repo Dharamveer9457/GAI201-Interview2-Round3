@@ -25,7 +25,7 @@ def createPost():
 
 @app.route("/viewposts", methods = ["GET"])
 def get_post():
-    posts_list = [{'id':post.id, 'username':post.username, 'caption':post.caption}]
+    posts_list = [{'id': post.id, 'username': post.username, 'caption': post.caption} for post in posts]
     return jsonify(posts_list), 200
 
 @app.route("/deletepost/<int:post_id>", methods=["DELETE"])

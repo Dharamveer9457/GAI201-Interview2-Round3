@@ -1,6 +1,6 @@
-from flask import flask, request, jsonify
+from flask import Flask, request, jsonify
 
-app = flask(__name__)
+app = Flask(__name__)
 
 posts = []
 
